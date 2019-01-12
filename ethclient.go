@@ -256,6 +256,7 @@ func (ec *Client) InitMapInfo() {
 	}
 	ec.mapContracts.Store(ec.voteContract.Hex(), true)
 
+	fmt.Println(fmt.Sprintf("eth contract adress:%x", (ec.voteContract[:])))
 	maxChainCode, err := voteCaller.MMaxChainCode(nil)
 	if err != nil {
 		panic(fmt.Sprintf("ethwatcher InitAppInfo, get max chain code error! e is %v \n", err.Error()))
